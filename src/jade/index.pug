@@ -1,0 +1,186 @@
+extend includes/_layout
+block title
+	title Index
+block content
+	//begin screen
+	.screen
+		.screen__container.container
+			.screen__inner
+				h1.screen__title Свадьба под ключ
+					span.screen__title-color от 900 рублей
+				a.screen__btn.btn.btn_red(href='#') Смотреть фотоотчет
+	//end screen
+
+	//begin two
+	.two
+		.container
+			.slider.js-slick
+				.slider__item
+					.slider__left
+						span.slider__text Нужно наладить эффективную работу между всеми, кого мы найдем
+					img.slider__img(src='img/content/slider-1.png' alt='image')
+					.slider__right
+						span.slider__text Наши люди работают в команде на протяжении многих лет
+				.slider__item
+					.slider__left
+						span.slider__text text22
+					img.slider__img(src='img/content/slider-1.png' alt='image')
+					.slider__right
+						span.slider__text text22
+				.slider__item
+					.slider__left
+						span.slider__text Нужно наладить эффективную работу между всеми, кого мы найдем text333
+					img.slider__img(src='img/content/slider-1.png' alt='image')
+					.slider__right
+						span.slider__text span.slider__text Наши люди работают в команде на протяжении многих лет text333
+			.ion.js-ion
+			.two__title.title Чтобы организовать свадьбу самостоятельно, вам понадобится:
+			.two__list
+				.two__list-col
+					.two__list-image
+						.icon.icon-two-1
+					.two__list-text Просмотреть более 50 сайтов подрядчиков
+				.two__list-col
+					.two__list-image
+						.icon.icon-two-2
+					.two__list-text Провести десятки собеседований, рассказав каждому, ваше представление о мероприятии
+				.two__list-col
+					.two__list-image
+						.icon.icon-two-3
+					.two__list-text Понять, что "качественно" и "дорого" для 80% компаний - синонимы
+				.two__list-col
+					.two__list-image
+						.icon.icon-two-4
+					.two__list-text Довериться подрядчику с оптимальной ценой
+				.two__list-col
+					.two__list-image
+						.icon.icon-two-5
+					.two__list-text Получить стандартную программу вечера, которую ваши гости видели на 70% других мероприятий
+	//end two
+
+	//begin team
+	.team
+		.container
+			.team__title.title Вы достойны того, чтобы наслаждаться мероприятием еще во время подготовки к нему.
+				span.team__title-color От вас эмоции, от нас:
+		//begin wed
+		.wed.js-wed
+			.wed__item
+				.wed__container.container
+					.wed__col
+						.wed__title Команда фотографов,
+						.wed__title видеографов
+						.wed__text Креативные профессионалы своего дела запечатлеют ваш праздник. Сохраните важное событие в вашей жизни себе на память.
+					.wed__col
+						img.wed__img(src='img/content/wed-1.png' alt='image')
+			.wed__item
+				.wed__container.container
+					.wed__col
+						.wed__title text22,
+						.wed__title text22
+						.wed__text text22
+					.wed__col
+						img.wed__img(src='img/content/wed-1.png' alt='image')
+			.wed__item
+				.wed__container.container
+					.wed__col
+						.wed__title text33,
+						.wed__title text33
+						.wed__text text33
+					.wed__col
+						img.wed__img(src='img/content/wed-1.png' alt='image')
+		//end wed
+		.container.text-center
+			a.team__btn.btn.btn_transparent(href='#') Заказать обратный звонок
+	//end team
+
+	//begin service
+	.serv
+		.container
+			.serv__title.title Весь спектр услуг в одном месте:
+			.serv__gallery.gallery
+				.gallery__row.gallery__row_3
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-1.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-2.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-3.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+				.gallery__row.gallery__row_4
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-4.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-5.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-6.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-7.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+	//end service
+
+	//begin work
+	.work
+		.container
+			.work__title.title Как мы делаем ваш праздник незабываемым?
+			//begin step
+			.step
+				.step__row
+					.step__col
+						.step__title Превратим мечту <br>в концепт
+						.step__text Выслушаем ваши желания. Составим концепт-план всего мероприятия.
+					.step__col
+						img.step__img(src='img/content/step-1.jpg' alt='image')
+				.step__row
+					.step__col
+						img.step__img(src='img/content/step-2.jpg' alt='image')
+					.step__col
+						.step__title Подберем вам идеальную команду
+						.step__text Устроим вам встречу сразу со всей командой. Обсудим все детали, которые нужно учесть.
+				.step__row
+					.step__col
+						.step__title Сделаем событие особенным
+						.step__text Реализуем все ваши желания. Спроектируем индивидуальную программу вечера.
+					.step__col
+						img.step__img(src='img/content/step-3.jpg' alt='image')
+				.step__row
+					.step__col
+						img.step__img(src='img/content/step-4.jpg' alt='image')
+					.step__col
+						.step__title Будем с вами рядом от первой встречи до вашего отъезда
+						.step__text Будем контролировать все мероприятия, решать все вопросы.
+			//end step
+	//end work

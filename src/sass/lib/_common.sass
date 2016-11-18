@@ -1,0 +1,585 @@
++font(MuseoCyrl-300, MuseoCyrl-300)
++font(MuseoCyrl-500Italic, MuseoCyrl-500Italic)
++font(MuseoCyrl-700, MuseoCyrl-700)
++font(MuseoCyrl-900, MuseoCyrl-900)
+
+// fonts
+$default-fonts: Arial, sans-serif
+=museo-300
+	font-family: 'MuseoCyrl-300', $default-fonts
+=museo-500i
+	font-family: 'MuseoCyrl-500Italic', $default-fonts
+=museo-700
+	font-family: 'MuseoCyrl-700', $default-fonts
+=museo-900
+	font-family: 'MuseoCyrl-900', $default-fonts
+
+//colors
+$primary: #443328
+$red: #df1841
+$light: #4c3b31
+
+=trs
+	transition: all 0.25s
+
+=smooth
+	-webkit-font-smoothing: antialiased
+
+
+/* ===================================
+	 Main Styles
+	 =================================== */
+body
+	position: relative
+	min-width: 320px
+	+museo-300
+	font-size: 15px
+	color: $primary
+	line-height: 1.2
+
+.wrapper
+	position: relative
+	overflow: hidden
+	margin: 0 auto
+	min-height: 100%
+
+.container
+	max-width: 1020px
+	margin: 0 auto
+	padding: 0 15px
+	+pie-clearfix
+
+
+/* Helpers
+	----------------------------------- */
+button
+	background-color: transparent
+
+a:hover, a:focus
+	text-decoration: none
+
+a
+	color: inherit
+	text-decoration: none
+
+table
+	vertical-align: top
+
+img
+	max-width: 100%
+	vertical-align: top
+
+.icon
+	display: inline-block
+	vertical-align: middle
+
+.text-left
+	text-align: left
+
+.text-center
+	text-align: center
+
+.text-right
+	text-align: right
+
+.is-hidden
+	display: none
+
+.vertical
+	display: inline-block
+	vertical-align: middle
+
+.cfx
+	+pie-clearfix
+
+*
+ 	+selection
+ 		color: #fff
+	  background-color: $red
+
+.btn
+	display: inline-block
+	padding: 15px 30px
+	+museo-900
+	font-size: 17px
+	line-height: 1.2
+	border-radius: 5px
+	border: 1px solid transparent
+	background-color: transparent
+	+smooth
+	+trs
+	&_red
+		color: #ffffff
+		background-color: $red
+		&:hover,
+		&:active
+			background-color: darken($red,10)
+	&_transparent
+		+museo-300
+		color: #4f3e34
+		background-color: rgba(255, 255, 255, .4)
+		border-color: #624b3d
+		padding: 10px 20px
+		&:hover,
+		&:active
+			color: #ffffff
+			background-color: #624b3d
+			
+.title
+	position: relative
+	padding-bottom: 35px
+	&:before
+		content: ''
+		position: absolute
+		z-index: 1
+		left: 50%
+		bottom: 0
+		transform: translateX(-50%)
+		+s(title)
+
+
+/* ===================================
+	 Header
+	 =================================== */
+.header
+	position: absolute
+	padding-top: 55px
+	z-index: 10
+	top: 0
+	left: 0
+	right: 0
+	+pie-clearfix
+	&__logo
+		margin-top: 5px
+		float: left
+	&__right
+		float: right
+		+pie-clearfix
+	&__address
+		+museo-700
+		text-align: right
+		font-size: 20px
+		line-height: 1.25
+	&__phone
+		margin-top: 5px
+		+museo-900
+		font-size: 30px
+		text-align: right
+		color: $red
+		display: block
+		float: right
+		
+
+/* ===================================
+	 Footer
+	 =================================== */
+.footer
+
+
+/* ===================================
+	 Main
+	 =================================== */
+.main
+
+/* ===================================
+	 Screen
+	 =================================== */
+.screen
+	height: 0
+	min-height: 840px
+	background: url(../img/bg/screen.jpg) center center no-repeat
+	background-size: cover
+	&__container
+		height: 100%
+		+vertical
+	&__inner
+		display: inline-block
+		vertical-align: middle
+		font-size: 0
+	&__title
+		margin-top: 100px
+		+museo-900
+		font-size: 60px
+		color: $light
+		line-height: 1
+		text-align: center
+		&-color
+			display: block
+			color: $red
+	&__btn
+		margin-top: 20px
+	
+/* ===================================
+	 Two
+	 =================================== */
+.two
+	position: relative
+	padding-top: 220px
+	z-index: 2
+	margin-top: -220px
+	min-height: 500px
+	background: url(../img/bg/slider-bg.png) top center no-repeat
+	background-size: 100%
+	+r(1919)
+		background-size: auto
+	&__title
+		max-width: 700px
+		margin-top: 75px
+		margin-left: auto
+		margin-right: auto
+		+museo-700
+		text-align: center
+		color: $light
+		font-size: 30px
+		line-height: 1.17
+	&__list
+		margin-top: 20px
+		+pie-clearfix
+		text-align: center
+		&-col
+			float: left
+			width: 20%
+		&-text
+			margin-top: 15px
+			padding: 0 15px
+			opacity: 0.8
+		
+	
+/* Slider
+	----------------------------------- */
+.slider
+	text-align: center
+	&__item
+		+pie-clearfix
+	&__img
+		float: left
+		width: 45%
+	&__text
+		max-width: 250px
+		display: inline-block
+		padding: 0 20px
+	&__left
+		float: left
+		width: 27.5%
+		margin-top: 160px
+		text-align: right
+	&__right
+		float: left
+		width: 27.5%
+		margin-top: 160px
+		text-align: left
+		
+/* Ion
+	----------------------------------- */
+.slider
+	+ .irs
+		margin-top: -33px
+		
+.irs
+	max-width: 900px
+	margin-left: auto
+	margin-right: auto
+	&-bar
+		cursor: pointer
+		background: transparent
+		border: none
+		&-edge
+			background: transparent
+			border: none
+	&-line
+		cursor: pointer
+		background: url(../img/bg/slider.png) center center repeat-x
+		border: none
+	&-slider
+		width: 22px
+		height: 22px
+		background: #685245
+		border: 2px solid white
+		box-shadow: none
+		top: 27px
+		+trs
+		&:hover
+			background: darken(#685245,10)
+			
+/* ===================================
+	 Team
+	 =================================== */
+.team
+	margin-top: -75px
+	padding-top: 215px
+	min-height: 862px
+	background: url(../img/bg/team.png) top center no-repeat
+	background-size: 100%
+	+r(1919)
+		background-size: auto
+	&__title
+		max-width: 800px
+		margin-left: auto
+		margin-right: auto
+		+museo-300
+		font-size: 30px
+		color: #4f3e34
+		text-align: center
+		&-color
+			display: block
+			+museo-700
+	&__btn
+		position: relative
+		z-index: 1
+			
+/* Wed
+	----------------------------------- */
+.wed
+	margin-left: auto
+	margin-right: auto
+	margin-bottom: -40px
+	&__container
+		max-width: 840px
+	&__col
+		float: left
+		width: 40%
+		padding-top: 75px
+		& + &
+			padding-top: 0
+			width: 60%
+	&__img
+		max-width: 130%
+	&__title
+		display: table
+		padding: 14px 18px
+		+museo-700
+		font-size: 22px
+		color: #ffffff
+		border-radius: 5px
+		background-color: $red
+		& + &
+			margin-top: -20px
+	&__title + &__text
+		margin-top: 10px
+	&__text
+		padding-right: 40px
+	&__prev,
+	&__next
+		position: absolute
+		z-index: 1
+		top: 35%
+		padding-top: 20px
+		padding-bottom: 20px
+		color: $red
+		+trs
+		.icon
+			font-size: 10px
+		&.slick-disabled
+			color: #6d6058
+		&:active
+			transform: scale(1.15)
+	&__prev
+		right: 50%
+		margin-right: 500px
+	&__next
+		left: 50%
+		margin-left: 495px
+		
+/* ===================================
+	 Service
+	 =================================== */
+.serv
+	padding-top: 20px
+	&__title
+		+museo-700
+		font-size: 30px
+		color: $light
+		text-align: center
+		
+/* Gallery
+	----------------------------------- */
+.gallery
+	margin-top: 35px
+	&__row
+		font-size: 0
+	&__row_3 &__item
+		width: 33.33%
+	&__row_4 &__item
+		width: 24.99%
+	&__item
+		position: relative
+		display: inline-block
+		vertical-align: top
+		overflow: hidden
+		text-align: center
+	&__desc
+		overflow: hidden
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 1
+		+museo-700
+		color: #ffffff
+		background-color: rgba(223, 24, 65, .85)
+		opacity: 0
+		transform: scale(0.5)
+		+vertical
+		transition: all 0.45s
+		&-inner
+			display: inline-block
+			vertical-align: middle
+			font-size: 20px
+			+smooth
+	&__item:hover &__desc
+		opacity: 1
+		transform: scale(1)
+	&__icon
+		font-size: 59px
+		opacity: 0
+		transition: all 0.45s
+		transition-delay: 0.2s
+	&__item:hover &__icon
+		opacity: 1
+	&__text
+		margin-top: 5px
+		opacity: 0
+		transition: all 0.45s
+		transition-delay: 0.3s
+	&__item:hover &__text
+		opacity: 1
+		
+/* ===================================
+	 Work
+	 =================================== */
+.work
+	margin-top: -20px
+	padding-top: 150px
+	min-height: 1189px
+	background: url(../img/bg/work.png) top center no-repeat
+	background-size: 100%
+	+r(1919)
+		background-size: auto
+	&__title
+		text-align: center
+		+museo-700
+		font-size: 30px
+		color: $light
+		
+/* Step
+	----------------------------------- */
+.step
+	position: relative
+	margin-top: 40px
+	max-width: 555px
+	margin-left: auto
+	margin-right: auto
+	&:before
+		pointer-events: none
+		z-index: 0
+		content: ''
+		position: absolute
+		top: -7px
+		left: -35px
+		right: -35px
+		bottom: -10px
+		background: url(../img/bg/work-line.png) top left no-repeat
+	&__row
+		position: relative
+		z-index: 1
+		+pie-clearfix
+		& + &
+			margin-top: 30px
+	&__col
+		position: relative
+		float: left
+		width: 50%
+		& + &
+			text-align: right
+	&__row:nth-child(2n+1) &__col:first-child
+		padding-left: 55px
+	&__row:nth-child(2n) &__col:last-child
+		padding-left: 60px
+	&__row:nth-child(1) &__col:last-child
+		&:before
+			pointer-events: none
+			content: ''
+			position: absolute
+			z-index: 1
+			left: 100%
+			margin-left: 25px
+			top: 40px
+			+s(step-1)
+	&__row:nth-child(3) &__col:last-child
+		&:before
+			pointer-events: none
+			content: ''
+			position: absolute
+			z-index: 1
+			left: 100%
+			margin-left: 25px
+			top: 40px
+			+s(step-3)
+	&__row:nth-child(2) &__col:first-child
+		&:before
+			pointer-events: none
+			content: ''
+			position: absolute
+			z-index: 1
+			right: 100%
+			margin-right: 25px
+			top: 40px
+			+s(step-2)
+	&__row:nth-child(4) &__col:first-child
+		&:before
+			pointer-events: none
+			content: ''
+			position: absolute
+			z-index: 1
+			right: 100%
+			margin-right: 25px
+			top: 40px
+			+s(step-4)
+	&__title
+		position: relative
+		margin-top: 40px
+		text-align: left
+		+museo-700
+		font-size: 18px
+		color: #000000
+		&:before
+			content: ''
+			position: absolute
+			z-index: 1
+			left: -30px
+			top: 0
+			width: 20px
+			height: 20px
+			+museo-500i
+			font-size: 12px
+			color: #ffffff
+			text-align: center
+			line-height: 20px
+			text-indent: 3px
+			border-radius: 50%
+			background-color: $red
+	&__row:nth-child(1) &__title
+		&:before
+			content: '1.'
+	&__row:nth-child(2) &__title
+		&:before
+			content: '2.'
+	&__row:nth-child(3) &__title
+		&:before
+			content: '3.'
+	&__row:nth-child(4) &__title
+		&:before
+			content: '4.'
+	&__text
+		margin-top: 10px
+		text-align: left
+		opacity: 0.8
+	&__img
+		border-radius: 5px
+	
+
+/* ===================================
+	 Other Styles
+	 =================================== */
+
