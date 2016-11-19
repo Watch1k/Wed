@@ -6,7 +6,7 @@ block content
 	.screen
 		.screen__container.container
 			.screen__inner
-				h1.screen__title Свадьба под ключ
+				h2.screen__title Свадьба под ключ
 					span.screen__title-color от 900 рублей
 				a.screen__btn.btn.btn_red(href='#') Смотреть фотоотчет
 	//end screen
@@ -184,3 +184,106 @@ block content
 						.step__text Будем контролировать все мероприятия, решать все вопросы.
 			//end step
 	//end work
+
+	//begin call
+	.call
+		.container
+			.call__row
+				.call__col
+					form.call__form.form.js-form(action='#')
+						.form__field
+							input.form__input(type='text' placeholder='Введите ваше имя' name='user_name' data-validation='required' data-validation-error-msg='введите имя')
+						.form__field
+							input.form__input.js-phone-mask(type='text' placeholder='Ваш телефон' name='user_phone' data-validation='required' data-validation-error-msg='введите телефон')
+						.form__field
+							input.form__input(type='text' placeholder='Удобное время для звонка' name='user_time')
+						.form__field
+							button.form__submit.btn.btn_white.js-init-modal(type='submit' data-href='modal_ty') Заказать обратный звонок
+				.call__col
+					.call__convert
+						img.call__convert-img(src='img/content/convert.png' alt='image')
+						.call__title Позвонить Андрею <br>15.05.2016 в 12:00
+						.call__subtitle У нас все записано!
+	//end call
+
+	//begin rate
+	.rate
+		.container
+			.rate__title.title Кто уже оценил нас?
+			.rate__row
+				.rate__card.card
+					.card__image
+						img.card__img(src='img/content/card-1.jpg' alt='image')
+					.card__in
+						.card__name Иванова И.И
+						.card__text Креативные профессионалы своего дела запечатлеют ваш праздник. Сохраните важное событие в вашей жизни себе на память.
+						.card__rate(data-rate='4')
+							+i('heart')
+							+i('heart')
+							+i('heart')
+							+i('heart')
+							+i('heart')
+						.card__row
+							a.card__btn.btn.btn_transparent(href='#') Написать
+							a.card__btn.btn.btn_red(href='#') Смотреть фотоотчет
+						.card__info
+							span.card__info-count 60
+							| &nbsp;человек /&nbsp;
+							span.card__info-date 18.08.2016
+				.rate__card.card
+					.card__image
+						img.card__img(src='img/content/card-1.jpg' alt='image')
+					.card__in
+						.card__name Иванова И.И
+						.card__text Креативные профессионалы своего дела запечатлеют ваш праздник. Сохраните важное событие в вашей жизни себе на память.
+						.card__rate(data-rate='5')
+							+i('heart')
+							+i('heart')
+							+i('heart')
+							+i('heart')
+							+i('heart')
+						.card__row
+							a.card__btn.btn.btn_transparent(href='#') Написать
+							a.card__btn.btn.btn_red(href='#') Смотреть фотоотчет
+						.card__info
+							span.card__info-count 60
+							| &nbsp;человек /&nbsp;
+							span.card__info-date 18.08.2016
+				.rate__card.card
+					.card__image
+						img.card__img(src='img/content/card-1.jpg' alt='image')
+					.card__in
+						.card__name Иванова И.И
+						.card__text Креативные профессионалы своего дела запечатлеют ваш праздник. Сохраните важное событие в вашей жизни себе на память.
+						.card__rate(data-rate='3')
+							+i('heart')
+							+i('heart')
+							+i('heart')
+							+i('heart')
+							+i('heart')
+						.card__row
+							a.card__btn.btn.btn_transparent(href='#') Написать
+							a.card__btn.btn.btn_red(href='#') Смотреть фотоотчет
+						.card__info
+							span.card__info-count 60
+							| &nbsp;человек /&nbsp;
+							span.card__info-date 18.08.2016
+	//end rate
+
+	//begin about
+	.about
+		.container
+			.about__row
+				.about__col
+					.about__title.title Где мы находимся?
+					.about__label Адрес офиса:
+					.about__text Самара, посёлок Дома ЭМО, <br>лица Третья, дом 4
+					.about__label Телефон:
+					a.about__text(href='tel:+89171044788') 8 (917) 104-47-88
+					.about__label Факс:
+					a.about__text(href='tel:89171044788') 8 (917) 104-47-88
+					.about__label E-mail:
+					a.about__text.about__text_mail(href='mailto:info@svadba.ru') info@svadba.ru
+				.about__col
+					.map#map
+	//end about
