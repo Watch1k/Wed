@@ -8,7 +8,7 @@ block content
 			.screen__inner
 				h2.screen__title Свадьба под ключ
 					span.screen__title-color от 900 рублей
-				a.screen__btn.btn.btn_red(href='#') Смотреть фотоотчет
+				a.screen__btn.btn.btn_red(href='#' target='_blank') Смотреть фотоотчет
 	//end screen
 
 	//begin two
@@ -18,21 +18,21 @@ block content
 				.slider__item
 					.slider__left
 						span.slider__text Нужно наладить эффективную работу между всеми, кого мы найдем
-					img.slider__img(src='img/content/slider-1.png' alt='image')
 					.slider__right
 						span.slider__text Наши люди работают в команде на протяжении многих лет
+					img.slider__img(src='img/content/slider-1.png' alt='image')
 				.slider__item
 					.slider__left
 						span.slider__text text22
-					img.slider__img(src='img/content/slider-1.png' alt='image')
 					.slider__right
 						span.slider__text text22
+					img.slider__img(src='img/content/slider-1.png' alt='image')
 				.slider__item
 					.slider__left
 						span.slider__text Нужно наладить эффективную работу между всеми, кого мы найдем text333
-					img.slider__img(src='img/content/slider-1.png' alt='image')
 					.slider__right
 						span.slider__text span.slider__text Наши люди работают в команде на протяжении многих лет text333
+					img.slider__img(src='img/content/slider-1.png' alt='image')
 			.ion.js-ion
 			.two__title.title Чтобы организовать свадьбу самостоятельно, вам понадобится:
 			.two__list
@@ -91,7 +91,7 @@ block content
 						img.wed__img(src='img/content/wed-1.png' alt='image')
 		//end wed
 		.container.text-center
-			a.team__btn.btn.btn_transparent(href='#') Заказать обратный звонок
+			a.team__btn.btn.btn_transparent.js-init-modal(href='#' data-href='modal_form') Заказать обратный звонок
 	//end team
 
 	//begin service
@@ -191,6 +191,7 @@ block content
 			.call__row
 				.call__col
 					form.call__form.form.js-form(action='#')
+						input(type="hidden" name="form_subject" value="Заказ обратного звонка (конверт)")
 						.form__field
 							input.form__input(type='text' placeholder='Введите ваше имя' name='user_name' data-validation='required' data-validation-error-msg='введите имя')
 						.form__field
@@ -198,7 +199,7 @@ block content
 						.form__field
 							input.form__input(type='text' placeholder='Удобное время для звонка' name='user_time')
 						.form__field
-							button.form__submit.btn.btn_white.js-init-modal(type='submit' data-href='modal_ty') Заказать обратный звонок
+							button.form__submit.btn.btn_white(type='submit') Заказать обратный звонок
 				.call__col
 					.call__convert
 						img.call__convert-img(src='img/content/convert.png' alt='image')
@@ -224,8 +225,8 @@ block content
 							+i('heart')
 							+i('heart')
 						.card__row
-							a.card__btn.btn.btn_transparent(href='#') Написать
-							a.card__btn.btn.btn_red(href='#') Смотреть фотоотчет
+							a.card__btn.btn.btn_transparent(href='#' target='_blank') Написать
+							a.card__btn.btn.btn_red(href='#' target='_blank') Смотреть фотоотчет
 						.card__info
 							span.card__info-count 60
 							| &nbsp;человек /&nbsp;
@@ -243,8 +244,8 @@ block content
 							+i('heart')
 							+i('heart')
 						.card__row
-							a.card__btn.btn.btn_transparent(href='#') Написать
-							a.card__btn.btn.btn_red(href='#') Смотреть фотоотчет
+							a.card__btn.btn.btn_transparent(href='#' target='_blank') Написать
+							a.card__btn.btn.btn_red(href='#' target='_blank') Смотреть фотоотчет
 						.card__info
 							span.card__info-count 60
 							| &nbsp;человек /&nbsp;
@@ -262,8 +263,8 @@ block content
 							+i('heart')
 							+i('heart')
 						.card__row
-							a.card__btn.btn.btn_transparent(href='#') Написать
-							a.card__btn.btn.btn_red(href='#') Смотреть фотоотчет
+							a.card__btn.btn.btn_transparent(href='#' target='_blank') Написать
+							a.card__btn.btn.btn_red(href='#' target='_blank') Смотреть фотоотчет
 						.card__info
 							span.card__info-count 60
 							| &nbsp;человек /&nbsp;
@@ -277,7 +278,7 @@ block content
 				.about__col
 					.about__title.title Где мы находимся?
 					.about__label Адрес офиса:
-					.about__text Самара, посёлок Дома ЭМО, <br>лица Третья, дом 4
+					.about__text Самара, посёлок Дома ЭМО, <br>улица Третья, дом 4
 					.about__label Телефон:
 					a.about__text(href='tel:+89171044788') 8 (917) 104-47-88
 					.about__label Факс:
@@ -287,3 +288,121 @@ block content
 				.about__col
 					.about__map#map
 	//end about
+
+	//begin present
+	.present
+		.present__container.container
+			.present__title.title Еще больше удовольствия!
+			.present__row
+				.present__col
+					img.present__img(src='img/content/present.png' alt='image')
+				.present__col
+					p.present__text Закажи обратный звонок и мы предложим тебе индивидуальный подарок к организации мероприятия!
+					form.present__form.form.form_present.js-form(action='#')
+						input(type="hidden" name="form_subject" value="Заказ подарка")
+						.form__field
+							input.form__input(type='text' placeholder='Введите ваше имя' name='user_name' data-validation='required' data-validation-error-msg='введите имя')
+						.form__field
+							input.form__input.js-phone-mask(type='text' placeholder='Ваш телефон' name='user_phone' data-validation='required' data-validation-error-msg='введите телефон')
+						.form__field
+							input.form__input(type='text' placeholder='Удобное время для звонка' name='user_time')
+						.form__field
+							button.form__submit.btn.btn_white(type='submit') Получить!
+	//end present
+
+	//begin photo
+	.photo
+		.container
+			.photo-nav.js-tabs-nav
+				button.photo-nav__btn.is-active(type='button') Интерьеры
+				button.photo-nav__btn(type='button') Мероприятия
+			.photo-for.js-tabs-for
+				.photo-for__item.gallery.gallery_3.is-active
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-1.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-2.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-3.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-1.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-2.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-3.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+				.photo-for__item.gallery.gallery_3
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-3.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-2.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-1.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-3.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-2.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+					.gallery__item
+						img.gallery__img(src='img/content/gallery-1.jpg' alt='image')
+						.gallery__desc
+							.gallery__desc-inner
+								.gallery__icon
+									.icon.icon-gallery-2
+								.gallery__text Номера <br>для размещения
+			.text-center
+				a.photo__btn.btn.btn_transparent(href='#' target='_blank') Смотреть все фотографии
+	//end photo

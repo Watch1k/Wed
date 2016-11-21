@@ -121,7 +121,7 @@ img
 		color: #4f3e34
 		background-color: rgba(255, 255, 255, .4)
 		border-color: #624b3d
-		padding: 10px 20px
+		padding: 11px 20px 10px
 		&:hover,
 		&:active
 			color: #ffffff
@@ -131,7 +131,7 @@ img
 		color: #ffffff
 		background-color: transparent
 		border-color: #ffffff
-		padding: 10px 20px
+		padding: 10px 20px 9px
 		&:hover,
 		&:active
 			color: $red
@@ -141,6 +141,8 @@ img
 	position: relative
 	padding-bottom: 35px
 	font-weight: normal
+	+r(767)
+		padding-bottom: 20px
 	&:before
 		content: ''
 		position: absolute
@@ -149,6 +151,8 @@ img
 		bottom: 0
 		transform: translateX(-50%)
 		+s(title)
+		+r(767)
+			+sr(title)
 
 
 /* ===================================
@@ -162,17 +166,35 @@ img
 	left: 0
 	right: 0
 	+pie-clearfix
+	+r(767)
+		padding-top: 10px
+	+r(539)
+		padding-top: 5px
 	&__logo
 		margin-top: 5px
 		float: left
+		+r(767)
+			width: 200px
+		+r(539)
+			float: none
+			margin-left: auto
+			margin-right: auto
+			width: 150px
+			margin-bottom: 10px
 	&__right
 		float: right
 		+pie-clearfix
+		+r(539)
+			float: none
 	&__address
 		+museo-700
 		text-align: right
 		font-size: 20px
 		line-height: 1.25
+		+r(767)
+			font-size: 16px
+		+r(539)
+			text-align: center
 	&__phone
 		margin-top: 5px
 		+museo-900
@@ -182,6 +204,14 @@ img
 		display: block
 		float: right
 		+trs
+		+r(767)
+			font-size: 20px
+		+r(539)
+			float: none
+			display: table
+			margin-left: auto
+			margin-right: auto
+			text-align: center
 		&:hover,
 		&:active
 			color: darken($red,10)
@@ -198,6 +228,56 @@ img
 	 Footer
 	 =================================== */
 .footer
+	min-height: 268px
+	margin-top: -65px
+	padding-top: 165px
+	background: url(../img/bg/present.png) top center no-repeat
+	background-size: 100%
+	+r(1919)
+		background-size: auto
+	.footer__logo
+		float: left
+		+r(767)
+			max-width: 200px
+			float: none
+			margin-left: auto
+			margin-right: auto
+	&__right
+		float: right
+		+r(767)
+			float: none
+			display: table
+			text-align: center
+			margin-left: auto
+			margin-right: auto
+			padding-bottom: 20px
+	&__act
+		position: relative
+		margin-top: 40px
+		padding-right: 45px
+		+r(767)
+			margin-top: 20px
+			padding-right: 0
+		&:before
+			content: ''
+			position: absolute
+			z-index: 1
+			right: 100%
+			top: 4px
+			margin-right: 10px
+			+s(act)
+		&-link
+			display: table
+			color: $red
+			text-decoration: underline
+			+trs
+			+r(767)
+				margin-left: auto
+				margin-right: auto
+			&:hover,
+			&:active
+				color: darken($red,10)
+				text-decoration: underline
 
 
 /* ===================================
@@ -213,6 +293,8 @@ img
 	min-height: 100vh
 	background: url(../img/bg/screen.jpg) center center no-repeat
 	background-size: cover
+	+r(1023)
+		min-height: 640px
 	&__container
 		height: 100%
 		+vertical
@@ -227,6 +309,9 @@ img
 		color: $light
 		line-height: 1
 		text-align: center
+		+r(767)
+			margin-top: 0
+			font-size: 36px
 		&-color
 			display: block
 			color: $red
@@ -237,9 +322,7 @@ img
 	 Two
 	 =================================== */
 .two
-	position: relative
 	padding-top: 220px
-	z-index: 2
 	margin-top: -220px
 	min-height: 500px
 	background: url(../img/bg/slider-bg.png) top center no-repeat
@@ -256,13 +339,28 @@ img
 		color: $light
 		font-size: 30px
 		line-height: 1.17
+		+r(767)
+			font-size: 20px
 	&__list
 		margin-top: 20px
 		+pie-clearfix
 		text-align: center
+		+r(1023)
+			font-size: 0
 		&-col
 			float: left
 			width: 20%
+			+r(1023)
+				float: none
+				display: inline-block
+				vertical-align: top
+				margin-bottom: 20px
+				width: 33.33%
+				font-size: 15px
+			+r(767)
+				width: 50%
+			+r(539)
+				width: 100%
 		&-text
 			margin-top: 15px
 			padding: 0 15px
@@ -278,20 +376,35 @@ img
 	&__img
 		float: left
 		width: 45%
+		+r(767)
+			width: 100%
+			margin-top: 20px
 	&__text
 		max-width: 250px
 		display: inline-block
 		padding: 0 20px
+		+r(767)
+			padding: 0
+			font-size: 12px
 	&__left
 		float: left
 		width: 27.5%
 		margin-top: 160px
 		text-align: right
+		+r(767)
+			margin-top: 0
+			padding-right: 10px
+			width: 50%
 	&__right
-		float: left
+		float: right
 		width: 27.5%
 		margin-top: 160px
 		text-align: left
+		+r(767)
+			margin-top: 0
+			padding-left: 10px
+			width: 50%
+			
 		
 /* Ion
 	----------------------------------- */
@@ -336,6 +449,8 @@ img
 	background-size: 100%
 	+r(1919)
 		background-size: auto
+	+r(767)
+		padding-bottom: 50px
 	&__title
 		max-width: 800px
 		margin-left: auto
@@ -344,6 +459,8 @@ img
 		font-size: 30px
 		color: #4f3e34
 		text-align: center
+		+r(767)
+			font-size: 20px
 		&-color
 			display: block
 			+museo-700
@@ -357,17 +474,29 @@ img
 	margin-left: auto
 	margin-right: auto
 	margin-bottom: -40px
+	+r(1023)
+		margin-bottom: 10px
 	&__container
 		max-width: 840px
 	&__col
 		float: left
 		width: 40%
 		padding-top: 75px
+		+r(767)
+			padding-top: 40px
+			width: 100%
+			text-align: center
 		& + &
 			padding-top: 0
 			width: 60%
+			+r(767)
+				width: 100%
 	&__img
 		max-width: 130%
+		+r(767)
+			max-width: 100%
+			margin-left: auto
+			margin-right: auto
 	&__title
 		display: table
 		padding: 14px 18px
@@ -376,8 +505,16 @@ img
 		color: #ffffff
 		border-radius: 5px
 		background-color: $red
+		+r(767)
+			margin-left: auto
+			margin-right: auto
+		+r(539)
+			padding: 10px 12px
+			font-size: 18px
 		& + &
 			margin-top: -20px
+			+r(539)
+				margin-top: -12px
 	&__title + &__text
 		margin-top: 10px
 	&__text
@@ -400,9 +537,30 @@ img
 	&__prev
 		right: 50%
 		margin-right: 500px
+		+r(1199)
+			right: auto
+			left: 5px
+			margin-right: 0
+		+r(1023)
+			left: auto
+			right: 50%
+			margin-right: 10px
+			top: 100%
+			margin-top: -40px
 	&__next
 		left: 50%
 		margin-left: 495px
+		+r(1199)
+			margin-left: 0
+			left: auto
+			right: 5px
+		+r(1023)
+			left: 50%
+			right: auto
+			margin-left: 10px
+			top: 100%
+			margin-top: -40px
+		
 		
 /* ===================================
 	 Service
@@ -414,23 +572,40 @@ img
 		font-size: 30px
 		color: $light
 		text-align: center
+		+r(767)
+			font-size: 20px
 		
 /* Gallery
 	----------------------------------- */
 .gallery
 	margin-top: 35px
+	font-size: 0
 	&__row
 		font-size: 0
-	&__row_3 &__item
+		+r(767)
+			display: inline
+	&__row:first-child &__item:first-child
+		+r(767)
+			width: 100%
+	&__row_3 &__item,
+	&_3 &__item
 		width: 33.33%
+		+r(767)
+			width: 50%
 	&__row_4 &__item
 		width: 24.99%
+		+r(767)
+			width: 50%
 	&__item
 		position: relative
 		display: inline-block
 		vertical-align: top
 		overflow: hidden
 		text-align: center
+	&__img
+		+r(767)
+			max-width: none
+			width: 100%
 	&__desc
 		overflow: hidden
 		position: absolute
@@ -485,6 +660,8 @@ img
 		+museo-700
 		font-size: 30px
 		color: $light
+		+r(767)
+			font-size: 20px
 		
 /* Step
 	----------------------------------- */
@@ -494,6 +671,8 @@ img
 	max-width: 555px
 	margin-left: auto
 	margin-right: auto
+	+r(767)
+		padding-bottom: 40px
 	&:before
 		pointer-events: none
 		z-index: 0
@@ -504,22 +683,44 @@ img
 		right: -35px
 		bottom: -10px
 		background: url(../img/bg/work-line.png) top left no-repeat
+		+r(767)
+			background: #F7F8F8
 	&__row
 		position: relative
 		z-index: 1
 		+pie-clearfix
+		+r(767)
+			display: table
+			&:after
+				content: none
+				display: none
 		& + &
 			margin-top: 30px
 	&__col
 		position: relative
 		float: left
 		width: 50%
+		+r(767)
+			width: 100%
+			float: none
 		& + &
 			text-align: right
 	&__row:nth-child(2n+1) &__col:first-child
 		padding-left: 55px
+		+r(767)
+			display: table-header-group
+			padding-left: 0
+	&__row:nth-child(2n+1) &__col:last-child
+		+r(767)
+			display: table-footer-group
 	&__row:nth-child(2n) &__col:last-child
 		padding-left: 60px
+		+r(767)
+			display: table-header-group
+			padding-left: 0
+	&__row:nth-child(2n) &__col:first-child
+		+r(767)
+			display: table-footer-group
 	&__row:nth-child(1) &__col:last-child
 		&:before
 			pointer-events: none
@@ -567,6 +768,8 @@ img
 		+museo-700
 		font-size: 18px
 		color: #000000
+		+r(767)
+			margin-left: 30px
 		&:before
 			content: ''
 			position: absolute
@@ -599,8 +802,13 @@ img
 		margin-top: 10px
 		text-align: left
 		opacity: 0.8
+		+r(767)
+			margin-bottom: 15px
 	&__img
 		border-radius: 5px
+		+r(767)
+			width: 100%
+			max-width: none
 		
 /* ===================================
 	 Call
@@ -612,23 +820,46 @@ img
 	background-size: 100%
 	+r(1919)
 		background-size: auto
+	+r(767)
+		padding-top: 100px
+		background-position: center center
+		background-size: cover
 	&__row
 		width: 100%
 		max-width: 900px
 		margin-left: auto
 		margin-right: auto
 		display: table
+		+r(767)
+			display: block
 	&__col
+		position: relative
+		z-index: 1
 		display: table-cell
 		vertical-align: top
 		text-align: right
 		width: 42%
+		+r(767)
+			display: block
+			width: 100%
+			text-align: center
 		& + &
 			width: 58%
+			+r(767)
+				display: block
+				z-index: 0
+				margin-top: -180px
+				width: 100%
 	&__convert
 		display: inline-block
 		position: relative
 		margin-top: 15px
+		+r(767)
+			left: 50%
+			transform: translateX(-40%)
+		&-img
+			+r(767)
+				max-width: none
 	&__title
 		position: absolute
 		z-index: 1
@@ -641,6 +872,9 @@ img
 		color: #000000
 		margin-left: -75px
 		transform: rotate(9deg)
+		+r(1023)
+			margin-left: -50px
+			bottom: 145px
 	&__subtitle
 		position: absolute
 		z-index: 1
@@ -653,10 +887,15 @@ img
 		color: $red
 		margin-left: -100px
 		transform: rotate(9deg)
+		+r(1023)
+			margin-left: -75px
+			bottom: 80px
 	&__form
 		margin-top: 150px
 		display: inline-block
 		position: relative
+		+r(1023)
+			margin-top: 110px
 		&:before
 			content: ''
 			position: absolute
@@ -694,34 +933,55 @@ img
 		background-color: white
 		border-radius: 5px
 		+placeholder-color(#756b66)
+	&_present &__input
+		border: 2px solid #d8d8d8
 	&__submit
 		text-align: center
 		padding-left: 0
 		padding-right: 0
 		width: 100%
+	&_present &__submit
+		color: $red
+		border: 2px solid $red
+		&:hover,
+		&:active
+			color: #ffffff
+			background-color: $red
+	&_present .help-block
+		color: $red
 	
 /* ===================================
 	 Rate
 	 =================================== */
 .rate
 	position: relative
-	z-index: 2
+	z-index: 1
 	margin-top: -60px
 	padding-top: 90px
 	padding-bottom: 65px
+	min-height: 645px
 	background: url(../img/bg/rate.jpg) center center no-repeat
 	background-size: cover
+	+r(767)
+		margin-top: 0
+		padding-top: 50px
+		padding-bottom: 0
 	&__title
 		+museo-700
 		color: $light
 		font-size: 30px
 		text-align: center
+		+r(767)
+			font-size: 20px
 	&__row
 		margin-top: 30px
 		+pie-clearfix
 	&__card
 		float: left
 		width: 33.33%
+		+r(1023)
+			width: 100%
+			margin-bottom: 50px
 		
 .card
 	text-align: center
@@ -742,6 +1002,12 @@ img
 		padding-left: 15px
 		padding-right: 15px
 		font-size: 18px
+		+r(1023)
+			max-width: 480px
+			margin-left: auto
+			margin-right: auto
+		+r(767)
+			font-size: 15px
 	&__rate
 		margin-top: 10px
 		font-size: 0
@@ -772,13 +1038,16 @@ img
 	&__row
 		margin-top: 20px
 	&__btn
-		padding: 10px
+		padding: 11px 10px 10px
 		margin-right: 5px
 		+museo-300
 		-webkit-font-smoothing: subpixel-antialiased
 		& + &
 			margin-left: 5px
 			margin-right: 0
+		&:nth-child(1)
+			+r(767)
+				margin-bottom: 10px
 	&__info
 		margin-top: 20px
 		+museo-700
@@ -789,21 +1058,37 @@ img
 	 About
 	 =================================== */
 .about
+	padding-top: 65px
+	+r(767)
+		padding-top: 30px
 	&__row
 		+pie-clearfix
 	&__col
 		float: left
-		width: 35%
+		width: 40%
+		+r(767)
+			width: 100%
+			text-align: center
 		& + &
-			width: 65%
+			width: 60%
+			+r(767)
+				width: 100%
+		&:nth-child(1)
+			+r(767)
+				margin-bottom: 30px
 	&__title
 		margin-bottom: 35px
 		+museo-700
 		color: $light
 		font-size: 30px
+		+r(767)
+			font-size: 20px
 		&:before
 			left: 0
 			transform: none
+			+r(767)
+				left: 50%
+				transform: translateX(-50%)
 	&__label
 		+museo-700
 		font-size: 16px
@@ -823,7 +1108,106 @@ img
 	&__map
 		width: 100%
 		height: 340px
-
+		border-radius: 5px
+		
+/* ===================================
+	 Present
+	 =================================== */
+.present
+	margin-top: -85px
+	padding-top: 210px
+	min-height: 770px
+	background: url(../img/bg/present.png) top center no-repeat
+	background-size: 100%
+	+r(1919)
+		background-size: auto
+	+r(767)
+		margin-top: -50px
+		padding-top: 180px
+	&__container
+		pointer-events: auto
+	&__title
+		text-align: center
+		+museo-700
+		color: $light
+		font-size: 30px
+		+r(767)
+			font-size: 20px
+	&__row
+		+pie-clearfix
+	&__col
+		float: left
+		width: 55%
+		text-align: right
+		+r(767)
+			width: 100%
+			text-align: center
+		& + &
+			text-align: left
+			width: 45%
+			padding-top: 65px
+			+r(767)
+				padding-top: 20px
+				width: 100%
+				text-align: center
+	&__img
+		+r(767)
+			max-width: 200px
+			margin-left: auto
+			margin-right: auto
+	&__text
+		color: $light
+		font-size: 18px
+		margin-bottom: 15px
+		+r(767)
+			max-width: 480px
+			margin-left: auto
+			margin-right: auto
+			font-size: 15px
+	&__form
+		+r(767)
+			margin-left: auto
+			margin-right: auto
+		
+		
+/* ===================================
+	 Photo
+	 =================================== */
+.photo
+	&-nav
+		font-size: 0
+		text-align: center
+		&__btn
+			width: 260px
+			height: 48px
+			line-height: 48px
+			+museo-700
+			font-size: 19px
+			color: #624b3d
+			border: 1px solid rgba(98, 75, 61, .3)
+			border-radius: 5px 5px 0 0
+			+trs
+			+r(767)
+				width: 50%
+				font-size: 16px
+				height: 36px
+				line-height: 36px
+			&:hover
+				border-color: $red
+				color: $red
+			&.is-active
+				border-color: transparent
+				background: $red url(../img/bg/btn-bg.png) center center repeat-x
+				color: #ffffff
+	&-for
+		&__item
+			display: none
+			margin-top: 0
+			&.is-active
+				display: block
+	&__btn
+		margin-top: 30px
+		
 
 /* ===================================
 	 Other Styles
@@ -860,6 +1244,7 @@ img
 		border-radius: 5px
 		+r(479)
 			min-width: 0
+			width: 100%
 	&__close
 		cursor: pointer
 		position: absolute
@@ -874,11 +1259,21 @@ img
 		font-size: 20px
 		color: #ffffff
 		background-color: $red
+		+r(767)
+			font-size: 18px
 	&__main
 		padding: 30px
 		+r(479)
 			padding-left: 15px
 			padding-right: 15px
+	&__form
+		margin-left: auto
+		margin-right: auto
+		font-size: 15px
 	&__text
 		& + &
 			margin-top: 14px
+			
+.test
+	color: #fff
+	font-size: 30px

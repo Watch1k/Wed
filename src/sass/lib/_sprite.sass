@@ -1,16 +1,17 @@
 $icons: (0:0)
-$icons: map-merge($icons,(form: (X: 0px, Y:-183px, W: 59px, H: 91px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(gallery-2: (X: -136px, Y:-183px, W: 61px, H: 59px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(step-1: (X: -345px, Y:0px, W: 59px, H: 61px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(step-2: (X: 0px, Y:0px, W: 87px, H: 95px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(step-3: (X: -63px, Y:-183px, W: 69px, H: 71px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(step-4: (X: -286px, Y:0px, W: 55px, H: 80px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(title: (X: 0px, Y:-278px, W: 220px, H: 17px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(two-1: (X: -189px, Y:-84px, W: 81px, H: 80px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(two-2: (X: -189px, Y:0px, W: 93px, H: 80px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(two-3: (X: -91px, Y:0px, W: 94px, H: 80px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(two-4: (X: -97px, Y:-99px, W: 71px, H: 80px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(two-5: (X: 0px, Y:-99px, W: 93px, H: 80px, TW: 404px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(act: (X: -286px, Y:-84px, W: 23px, H: 30px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(form: (X: 0px, Y:-183px, W: 59px, H: 91px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(gallery-2: (X: -199px, Y:-183px, W: 61px, H: 59px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(step-1: (X: -136px, Y:-183px, W: 59px, H: 61px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(step-2: (X: 0px, Y:0px, W: 87px, H: 95px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(step-3: (X: -63px, Y:-183px, W: 69px, H: 71px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(step-4: (X: -286px, Y:0px, W: 55px, H: 80px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(title: (X: 0px, Y:-278px, W: 220px, H: 17px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(two-1: (X: -189px, Y:-84px, W: 81px, H: 80px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(two-2: (X: -189px, Y:0px, W: 93px, H: 80px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(two-3: (X: -91px, Y:0px, W: 94px, H: 80px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(two-4: (X: -97px, Y:-99px, W: 71px, H: 80px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(two-5: (X: 0px, Y:-99px, W: 93px, H: 80px, TW: 341px, TH: 295px, IMG: '../img/icons.png')))
 
 
 // Gets an attribute from the sass map
@@ -52,75 +53,81 @@ $icons: map-merge($icons,(two-5: (X: 0px, Y:-99px, W: 93px, H: 80px, TW: 404px, 
 @mixin spr($i)
 	+sprite-position-retina($i)
 
+.icon-act
+	width: 23px
+	height: 30px
+	background-image: url('../img/icons.png')
+	background-position: -286px -84px
+	background-size: 341px 295px
 .icon-form
 	width: 59px
 	height: 91px
 	background-image: url('../img/icons.png')
 	background-position: 0px -183px
-	background-size: 404px 295px
+	background-size: 341px 295px
 .icon-gallery-2
 	width: 61px
 	height: 59px
 	background-image: url('../img/icons.png')
-	background-position: -136px -183px
-	background-size: 404px 295px
+	background-position: -199px -183px
+	background-size: 341px 295px
 .icon-step-1
 	width: 59px
 	height: 61px
 	background-image: url('../img/icons.png')
-	background-position: -345px 0px
-	background-size: 404px 295px
+	background-position: -136px -183px
+	background-size: 341px 295px
 .icon-step-2
 	width: 87px
 	height: 95px
 	background-image: url('../img/icons.png')
 	background-position: 0px 0px
-	background-size: 404px 295px
+	background-size: 341px 295px
 .icon-step-3
 	width: 69px
 	height: 71px
 	background-image: url('../img/icons.png')
 	background-position: -63px -183px
-	background-size: 404px 295px
+	background-size: 341px 295px
 .icon-step-4
 	width: 55px
 	height: 80px
 	background-image: url('../img/icons.png')
 	background-position: -286px 0px
-	background-size: 404px 295px
+	background-size: 341px 295px
 .icon-title
 	width: 220px
 	height: 17px
 	background-image: url('../img/icons.png')
 	background-position: 0px -278px
-	background-size: 404px 295px
+	background-size: 341px 295px
 .icon-two-1
 	width: 81px
 	height: 80px
 	background-image: url('../img/icons.png')
 	background-position: -189px -84px
-	background-size: 404px 295px
+	background-size: 341px 295px
 .icon-two-2
 	width: 93px
 	height: 80px
 	background-image: url('../img/icons.png')
 	background-position: -189px 0px
-	background-size: 404px 295px
+	background-size: 341px 295px
 .icon-two-3
 	width: 94px
 	height: 80px
 	background-image: url('../img/icons.png')
 	background-position: -91px 0px
-	background-size: 404px 295px
+	background-size: 341px 295px
 .icon-two-4
 	width: 71px
 	height: 80px
 	background-image: url('../img/icons.png')
 	background-position: -97px -99px
-	background-size: 404px 295px
+	background-size: 341px 295px
 .icon-two-5
 	width: 93px
 	height: 80px
 	background-image: url('../img/icons.png')
 	background-position: 0px -99px
-	background-size: 404px 295px
+	background-size: 341px 295px

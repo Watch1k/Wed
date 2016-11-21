@@ -168,16 +168,45 @@ $(document).ready(function () {
 
 	//for IE9
 	svg4everybody();
-	initValidator();
 	initPhoneMask();
+	initSubmit();
+	initModals();
 
 	google.maps.event.addDomListener(window, 'load', initMap());
 
+	(function () {
+		var tabs = $('.js-tabs-for');
+		if (tabs.length) {
+			$(window).resize(function () {
+				tabs.css({height: 'auto'});
+			});
+			var tabsItem = tabs.children(),
+				tabsButton = $('.js-tabs-nav').children(),
+				currentHeight;
+
+			currentHeight = tabsItem.outerHeight();
+			tabsItem.next().hide();
+			tabs.css({height: currentHeight});
+
+			tabsButton.on('click', function () {
+				var index = $(this).index(),
+					tabsHeight = 0;
+				tabsButton.removeClass('is-active');
+				$(this).addClass('is-active');
+				tabsItem.fadeOut('fast').promise().done(function () {
+					tabsHeight = tabsItem.eq(index).outerHeight();
+					tabs.css({height: tabsHeight});
+					tabsItem.eq(index).fadeIn('fast');
+				});
+			});
+		}
+	})();
+
 	function initMap() {
-		var myLatLng = {lat: 34.0627069, lng: -118.3539114};
+		var myLatLng = {lat: 53.355467, lng: 50.213700};
 		var mapProp = {
 			center: myLatLng,
-			zoom: 12,
+			zoom: 15,
 			scrollwheel: false,
 			draggable: true,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -190,20 +219,39 @@ $(document).ready(function () {
 		});
 	}
 
-	(function () {
-		var form = $('.js-form'),
-			initModalBtn = $('.js-init-modal');
-
-		form.on('submit', function () {
-			var href = initModalBtn.data('href');
-			$.get('modals/' + href + '.html', function (data) {
-				$('body').append(data);
-				$('.js-modal').fadeIn();
-				initModalClose();
+	function initSubmit() {
+		var form = $('.js-form');
+		form.unbind();
+		initValidator();
+		form.submit(function (e) {
+			e.preventDefault();
+			var _this = $(this),
+				popup = $('.js-modal');
+			$.ajax({
+				type: "POST",
+				url: "mail.php",
+				data: _this.serialize()
+			}).done(function () {
+				if ($('.js-modal').length) {
+					$('.js-modal').children().fadeOut(function () {
+						$(this).remove();
+						$.get('modals/modal_ty.html', function (data) {
+							$('.js-modal').append(data);
+							$('.js-modal').children().fadeIn();
+							initModalClose();
+						});
+					});
+				} else {
+					$.get('modals/modal_ty.html', function (data) {
+						$('body').append('<div class="modal js-modal">' + data + '</div>');
+						$('body').addClass('is-locked');
+						$('.js-modal').fadeIn();
+						initModalClose();
+					});
+				}
 			});
-			return false;
 		});
-	})();
+	}
 
 	function initModalClose() {
 		var modal = $('.js-modal'),
@@ -224,29 +272,47 @@ $(document).ready(function () {
 				$(this).fadeOut(function () {
 					$('body').removeClass('is-locked');
 					$(this).remove();
+					$('form').trigger('reset');
 				});
 			}
 		});
 	}
 
-	function initValidator(){
-		$.validate({
-			validateOnBlur : true,
-			showHelpOnFocus : false,
-			addSuggestions : false,
-			scrollToTopOnError: false,
-			borderColorOnError : '#FF0000'
+	function initModals() {
+		var modalBtn = $('.js-init-modal');
+		modalBtn.on('click', function (e) {
+			e.preventDefault();
+			var _thisBtn = $(this),
+				ref = _thisBtn.data('href');
+			$('body').addClass('is-locked');
+			$.get('modals/' + ref + '.html', function (data) {
+				$('body').append(data);
+				$('.js-modal').fadeIn();
+				initSubmit();
+				initPhoneMask();
+				initModalClose();
+			});
 		});
 	}
 
-	function initPhoneMask(){
+	function initValidator() {
+		$.validate({
+			validateOnBlur: true,
+			showHelpOnFocus: false,
+			addSuggestions: false,
+			scrollToTopOnError: false,
+			borderColorOnError: '#FF0000'
+		});
+	}
+
+	function initPhoneMask() {
 		var phoneInput = $(".js-phone-mask");
 
 		phoneInput.mask("+9(999)999-99-99");
 
 		//SET CURSOR POSITION
-		$.fn.setCursorPosition = function(pos) {
-			this.each(function(index, elem) {
+		$.fn.setCursorPosition = function (pos) {
+			this.each(function (index, elem) {
 				if (elem.setSelectionRange) {
 					elem.setSelectionRange(pos, pos);
 				} else if (elem.createTextRange) {
@@ -260,12 +326,12 @@ $(document).ready(function () {
 			return this;
 		};
 
-		phoneInput.on('focus', function(){
+		phoneInput.on('focus', function () {
 			var _this = $(this);
 
-			setTimeout(function() {
+			setTimeout(function () {
 				_this.setCursorPosition(1);
-			},100);
+			}, 100);
 		});
 	}
 
@@ -292,7 +358,8 @@ $(document).ready(function () {
 			slidesToScroll: 1,
 			fade: true,
 			arrows: false,
-			dots: false
+			dots: false,
+			adaptiveHeight: true
 		});
 
 		ion.ionRangeSlider({
@@ -323,5 +390,4 @@ $(document).ready(function () {
 			nextArrow: '<button type="button" class="wed__next slick-next"><svg class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>'
 		});
 	})();
-
 });

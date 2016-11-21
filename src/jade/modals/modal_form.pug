@@ -1,0 +1,18 @@
+include ../includes/_mixins
+
+.modal.js-modal
+	.modal__in
+		button.modal__close.js-modal-close(type='button')
+			+i('close')
+		.modal__head Заказать обратный звонок
+		.modal__main
+			form.modal__form.form.form_present.js-form(action='#')
+				input(type="hidden" name="form_subject" value="Заказ обратного звонка")
+				.form__field
+					input.form__input(type='text' placeholder='Введите ваше имя' name='user_name' data-validation='required' data-validation-error-msg='введите имя')
+				.form__field
+					input.form__input.js-phone-mask(type='text' placeholder='Ваш телефон' name='user_phone' data-validation='required' data-validation-error-msg='введите телефон')
+				.form__field
+					input.form__input(type='text' placeholder='Удобное время для звонка' name='user_time')
+				.form__field
+					button.form__submit.btn.btn_white(type='submit' data-href='modal_ty') Получить!
