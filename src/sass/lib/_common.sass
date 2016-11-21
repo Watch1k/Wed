@@ -609,6 +609,8 @@ img
 	&__desc
 		overflow: hidden
 		position: absolute
+		padding-left: 10px
+		padding-right: 10px
 		top: 0
 		left: 0
 		width: 100%
@@ -626,14 +628,18 @@ img
 			vertical-align: middle
 			font-size: 20px
 			+smooth
+			+r(767)
+				font-size: 16px
 	&__item:hover &__desc
 		opacity: 1
 		transform: scale(1)
 	&__icon
-		font-size: 59px
 		opacity: 0
 		transition: all 0.45s
 		transition-delay: 0.2s
+		+r(767)
+			transform: scale(0.6)
+			margin-bottom: -15px
 	&__item:hover &__icon
 		opacity: 1
 	&__text
